@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { IonContent } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -8,14 +8,39 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
+  @ViewChild(IonContent, { static: false }) content: IonContent;
+  dummyList: any;
+
   data: any;
-  limit: number = 20;
+  limit: number = 5;
+
 
   loadData(infiniteScroll) {
     setTimeout(()=>{
-      this.limit += 20;
+      this.limit += 5;
       infiniteScroll.target.complete();
     },500);
+  }
+
+
+  logScrollStart(event) {
+    console.log("logScrollStart : When Scroll Starts", event);
+  }
+
+  logScrolling(event) {
+    console.log("logScrolling : When Scrolling", event);
+  }
+
+  logScrollEnd(event) {
+    console.log("logScrollEnd : When Scroll Ends", event);
+  }
+
+  ScrollToBottom() {
+    this.content.scrollToBottom(1500);
+  }
+
+  ScrollToTop() {
+    this.content.scrollToTop(2000);
   }
 
 

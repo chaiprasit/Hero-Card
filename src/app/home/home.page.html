@@ -1,13 +1,19 @@
 <ion-toolbar color="primary">
   <ion-title>HERO CARD </ion-title>
+  <ion-icon size="large"  src="https://www.flaticon.com/svg/vstatic/svg/1487/1487232.svg?token=exp=1615553654~hmac=e1f896d58d099670824615c84a585310"></ion-icon>
 </ion-toolbar>
-<ion-content>
+
+<ion-content [scrollEvents]="true"
+(ionScrollStart)="logScrollStart($event)"
+(ionScroll)="logScrolling($event)"
+(ionScrollEnd)="logScrollEnd($event)">
+
   <!-- <ion-searchbar (ionInput)="filterList($event)">
 
   </ion-searchbar> -->
 
   <ion-list line="none">
-    <ion-item *ngFor="let item of data | slice:0:limit" color="dark" lines="none">
+    <ion-item *ngFor="let item of data | slice:0:limit"  lines="none" color="dark">
       <ion-card (click)="viewDetails(item)" class="card" class="centercard" lines="none">&nbsp;
         <img src="{{item.images.sm}}" class="center" />
         <ion-card-header>
@@ -15,6 +21,7 @@
         </ion-card-header>
       </ion-card>
     </ion-item>
+
     <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
       <ion-infinite-scroll-content
         loadingSpinner="bubbles"
@@ -23,3 +30,9 @@
     </ion-infinite-scroll>
   </ion-list>
 </ion-content>
+  <span class="button">
+    <ion-icon (click)="ScrollToTop()" size="large" name="caret-up-outline" class="icon"></ion-icon>
+  </span>
+  <span class="button2">
+  <ion-icon (click)="ScrollToBottom()" size="large" name="caret-down-outline" class="icon"></ion-icon>
+</span>
