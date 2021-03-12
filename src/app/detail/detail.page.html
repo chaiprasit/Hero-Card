@@ -1,0 +1,107 @@
+<script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+<style>
+  :root {
+    --ion-safe-area-top: 20px;
+    --ion-safe-area-bottom: 22px;
+  }
+</style>
+<ion-toolbar color="primary">
+  <ion-icon size="large" name="arrow-back-outline" class="backicon" routerLink="/home"></ion-icon>
+</ion-toolbar>
+<!-- <ion-header>
+  <ion-icon size="large" name="arrow-back-outline" class="backicon" routerLink="/home"></ion-icon>
+</ion-header> -->
+<ion-app>
+  <ion-content color="dark" fullscreen class="ion-padding" scroll-y="false">
+    <ion-slides>
+
+      <ion-slide>
+        <ion-card>
+          <ion-card-title>Powerstats</ion-card-title>
+          <img src="{{images.lg}}" class="center" />
+          <ion-card-subtitle>{{name}}</ion-card-subtitle>
+          <ion-card-header>
+
+            <ion-item lines="none">
+              <ion-label>Combat: {{powerstats.combat}}</ion-label>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-label>Power: {{powerstats.power}}</ion-label>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-label>Durability: {{powerstats.durability}}</ion-label>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-label>Speed: {{powerstats.speed}}</ion-label>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-label>Strength: {{powerstats.strength}}</ion-label>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-label>Intelligence: {{powerstats.intelligence}}</ion-label>
+            </ion-item>
+
+          </ion-card-header>
+
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card>
+          <ion-card-title>Appearance</ion-card-title>
+          <img src="{{images.lg}}" class="center" />
+          <ion-card-subtitle>{{name}}</ion-card-subtitle>
+          <ion-card-header>
+
+            <ion-item lines="none">
+              <ion-label>Gender: {{appearance.gender}}</ion-label>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-label>Race: {{appearance.race}}</ion-label>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-label>Height: {{appearance.height[1]}}</ion-label>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-label>Weight: {{appearance.weight[1]}}</ion-label>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-label>EyeColor: {{appearance.eyeColor}}</ion-label>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-label>HairColor: {{appearance.hairColor}}</ion-label>
+            </ion-item>
+
+          </ion-card-header>
+
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card>
+          <ion-card-title>Biography</ion-card-title>
+          <ion-card-content>FullName: {{biography.fullName}}</ion-card-content>
+          <ion-card-content>Placeofbirth: {{biography.placeOfBirth}}</ion-card-content>
+          <ion-card-content>FirstAppearance: {{biography.firstAppearance}}</ion-card-content>
+          <ion-card-content>Publisher: {{biography.publisher}}</ion-card-content>
+          <ion-card-content>Alignment: {{biography.alignment}}</ion-card-content>
+
+
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </ion-content>
+</ion-app>
+<!-- <p>{{powerstats.intelligence}}</p> -->
